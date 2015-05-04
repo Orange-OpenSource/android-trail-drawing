@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion Integer.parseInt(appCompileSdkVersion)
+    buildToolsVersion appBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(appMinSdkVersion)
+        targetSdkVersion Integer.parseInt(appTargetSdkVersion)
+        versionCode Integer.parseInt(appVersionCode)
+        versionName appVersion
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+  compile "com.orange.dgil.trail:trail-core-lib:${project.ext.trailCoreLibVersion}"
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${project.ext.gradleAndroidPluginVersion}"
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = gradleWrapperVersion
+}

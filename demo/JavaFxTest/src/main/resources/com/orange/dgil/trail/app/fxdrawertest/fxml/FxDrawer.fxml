@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?language javascript?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox fx:id="vboxLayout" alignment="TOP_CENTER" minHeight="600.0" minWidth="800.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.orange.dgil.trail.app.fxdrawertest.fxcontroller.MouseController">
+
+    <children>
+        <ToolBar VBox.vgrow="NEVER">
+            <items>
+            <CheckBox fx:id="rawCheckBox" mnemonicParsing="false" selected="true" text="Raw" />
+            <CheckBox fx:id="linearFilterCheckBox" mnemonicParsing="false" text="Linear filter" />
+            <CheckBox fx:id="vectoCheckBox" mnemonicParsing="false" text="Vecto" />
+            <CheckBox fx:id="quadCheckBox" mnemonicParsing="false" text="Quad" />
+            <Separator orientation="VERTICAL" />
+            <Label text="X offset" />
+            <Slider blockIncrement="5.0" max="800.0" minorTickCount="5" snapToTicks="true" value="0" fx:id="xOffsetSlider" />
+            <Label text="Y offset" />
+            <Slider fx:id="yOffsetSlider" blockIncrement="5.0" max="500.0" minorTickCount="5" snapToTicks="true" value="100.0" />
+            <Separator orientation="VERTICAL" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Vecto error pixels" textAlignment="CENTER" />
+            <TextField fx:id="vectoErrorPixelsText" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="Vecto window size" textAlignment="CENTER" />
+            <TextField fx:id="vectoWindowSizeText" />
+            </items>
+        </ToolBar>
+        <Canvas fx:id="canvas" height="800.0" onMouseDragged="#onMouseDragged" onMousePressed="#onMousePressed" onMouseReleased="#onMouseReleased" width="1280.0" VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

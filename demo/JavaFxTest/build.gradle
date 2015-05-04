@@ -1,0 +1,19 @@
+apply from: 'javafx.plugin'
+
+javafx {
+    appID 'FxDrawer'
+    mainClass 'com.orange.dgil.trail.app.fxdrawertest.FxDrawer'
+}
+
+dependencies {
+  compile "com.orange.dgil.trail:trail-core-lib:${project.ext.trailCoreLibVersion}"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = gradleWrapperVersion
+}
