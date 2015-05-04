@@ -1,5 +1,5 @@
-trail-drawing
-=============
+Trail Drawing library
+=====================
 
 ![drawing examples](https://github.com/Orange-OpenSource/trail-drawing/blob/master/demo/example.png)
 
