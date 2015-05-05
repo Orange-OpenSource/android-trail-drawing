@@ -5,6 +5,12 @@ Trail Drawing library
 
 A gesture trail drawing library for Android and Java applications
 
+# Demo applications
+Can be found in the "demo" directory: android and javafx apps. Basically the javafx application is used to test and debug algorithms.
+Above gestures where produced with the android "DroidTest" demo, whose prebuilt apk is here: https://github.com/Orange-OpenSource/trail-drawing/blob/master/demo/DroidDrawingTest.apk
+
+Happy testing!
+
 # Authors
 The library is born in 2014 at the Orange Labs in Meylan (french Alps). If Christophe Maldivi and Eric Petit practice cliff climbing together, they also sometimes write software together :)
 
