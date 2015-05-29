@@ -7,7 +7,7 @@ A gesture trail drawing library for Android and Java applications
 
 # Build the library
 
-It is a maven build, so basically <pre><code>mvn install</pre></code> should do the job. It will install the library in your local repository. You can also retrieve the jar file under the target directory.
+It is a maven build, so basically <pre><code>mvn install</pre></code> should do the job. It will install the library in your local repository. You can also retrieve the jar file under the target directory (after the maven build).
 
 To use the library in a maven build:
 <pre><code>
