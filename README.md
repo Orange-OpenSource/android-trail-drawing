@@ -11,12 +11,12 @@ It is a maven build, so basically <pre><code>mvn install</pre></code> should do 
 
 To use the library in a maven build:
 <pre><code>
-<dependency>
-  <groupId>ccom.orange.dgil.trail</groupId>
-  <artifactId>trail-core-lib</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <scope>compile</scope>
-</dependency>
+&lt;dependency&gt;
+  &lt;groupId&gt;ccom.orange.dgil.trail&lt;/groupId&gt;
+  &lt;artifactId&gt;trail-core-lib&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
 </pre></code>
 
 In a gradle build:
