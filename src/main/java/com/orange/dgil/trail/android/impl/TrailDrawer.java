@@ -30,9 +30,9 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   private View view;
   private IAnimListener animationListener;
 
-  private boolean visible;
+  private boolean visible = true;
   private boolean inGesture;
-  private boolean multistrokeEnabled;
+  private boolean multistrokeEnabled = true;
 
 
   public TrailDrawer(View view) {
@@ -121,6 +121,7 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
       drawingTool.reset();
       hide();
     }
+    show();
   }
 
   @Override
@@ -144,21 +145,27 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
 
   @Override
   public void animate() {
-    visible = true;
-    animManager.start();
+    if (visible) {
+      animManager.start();
+    }
   }
 
   @Override
   public void animateAlpha(int color) {
-    getAnimationParameters().setColorForAlphaAnimation(color);
-    drawingTool.forceRedrawForAnimation();
-    animate();
+    if (visible) {
+      getAnimationParameters().setColorForAlphaAnimation(color);
+      boolean eraseBitmap = getTrailOptions().getColor() != color;
+      drawingTool.forceRedrawForAnimation(eraseBitmap);
+      animate();
+    }
   }
 
   @Override
   public void animateToColor(int color) {
-    getAnimationParameters().setColorProperties(getTrailOptions().getColor(), color);
-    animate();
+    if (visible) {
+      getAnimationParameters().setColorProperties(getTrailOptions().getColor(), color);
+      animate();
+    }
   }
 
   @Override
@@ -173,12 +180,10 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
     showAndRedrawPath();
   }
 
-
   @Override
   public AnimParameters getAnimationParameters() {
     return animManager.getAnimationParameters();
   }
-
 
   @Override
   public void animationFinished() {

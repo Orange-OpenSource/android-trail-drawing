@@ -55,9 +55,11 @@ class QuillTrailBitmap implements IDrawingTool {
   }
 
   @Override
-  public void forceRedrawForAnimation() {
+  public void forceRedrawForAnimation(boolean eraseBitmap) {
     bitmapDrawer.forceColor(animManager.getAnimColor());
-    quillBitmap.reset();
+    if (eraseBitmap) {
+      quillBitmap.reset();
+    }
     for (int i = 0; i <= quadCurveArray.getLastPointIndex(); i++) {
       TrailPoint point = quadCurveArray.get(i);
       bitmapDrawer.drawPoint(quillBitmap.getBitmapCanvas(), point.getX(), point.getY());
@@ -68,6 +70,7 @@ class QuillTrailBitmap implements IDrawingTool {
   public void touchDown(int x, int y) {
     inGesture = true;
     readIndex = 0;
+    quillBitmap.resetAlpha();
     trailBounds.updateTrailBoundsOnTouchDown(x, y);
   }
 

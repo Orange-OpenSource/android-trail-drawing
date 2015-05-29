@@ -48,4 +48,9 @@ public class DrawingTestActivity extends Activity {
   public void onMarkerSelected(View view) {
     drawingArea.onMarkerSelected();
   }
+
+  /** on click, see layout.xml */
+  public void onClearSelected(View view) {
+    drawingArea.onClearSelected();
+  }
 }

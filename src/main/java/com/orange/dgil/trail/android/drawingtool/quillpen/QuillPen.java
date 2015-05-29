@@ -58,8 +58,8 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
   }
 
   @Override
-  public void forceRedrawForAnimation() {
-    quillTrailBitmap.forceRedrawForAnimation();
+  public void forceRedrawForAnimation(boolean eraseBitmap) {
+    quillTrailBitmap.forceRedrawForAnimation(eraseBitmap);
   }
 
   @Override
@@ -132,7 +132,7 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
 
   private void checkAnimationForceRedraw() {
     if (animManager.isRunning() && !animParameters.areStartEndColorsRgbEqual()) {
-      forceRedrawForAnimation();
+      forceRedrawForAnimation(true);
     }
   }
 

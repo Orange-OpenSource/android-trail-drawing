@@ -17,9 +17,10 @@ import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
 import com.orange.dgil.trail.android.ITrailDrawer;
+import com.orange.dgil.trail.android.animation.IAnimListener;
 import com.orange.dgil.trail.android.impl.TrailDrawer;
 
-public class DrawingArea extends RelativeLayout {
+public class DrawingArea extends RelativeLayout implements IAnimListener {
 
   private static final int TRAIL_COLOR = Color.BLACK;
 
@@ -33,6 +34,7 @@ public class DrawingArea extends RelativeLayout {
     setWillNotDraw(false);
     trailDrawer = new TrailDrawer(this);
     trailDrawer.getTrailOptions().setColor(TRAIL_COLOR);
+    trailDrawer.setAnimationListener(this);
   }
 
   @Override
@@ -52,18 +54,16 @@ public class DrawingArea extends RelativeLayout {
   private void dispatchEvent(MotionEvent event) {
     switch (event.getActionMasked()) {
     case MotionEvent.ACTION_DOWN:
-      onDown(event.getX(), event.getY());
+      trailDrawer.touchDown((int)event.getX(), (int)event.getY());
       break;
     case MotionEvent.ACTION_MOVE:
-        dispatchMove(event);
+      dispatchMove(event);
       break;
     case MotionEvent.ACTION_UP:
-        onUp();
+      trailDrawer.touchUp();
       break;
-    case MotionEvent.ACTION_CANCEL:
-      onCancel();
     default:
-      onCancel();
+      trailDrawer.touchCancel();
     }
   }
 
@@ -74,37 +74,27 @@ public class DrawingArea extends RelativeLayout {
     onMove(event.getX(), event.getY());
   }
 
-  private void onDown(float x, float y) {
-    onClear();
-    trailDrawer.touchDown((int)x, (int)y);
-    trailDrawer.show();
-  }
-
   private void onMove(float x, float y) {
     trailDrawer.touchMove((int) x, (int) y);
   }
 
-  private void onUp() {
-    trailDrawer.touchUp();
-    trailDrawer.getAnimationParameters().setTimeProperties(2000, 500);
-    trailDrawer.animateAlpha(TRAIL_COLOR);
-  }
-
-  private void onCancel() {
-    trailDrawer.touchCancel();
-  }
-
-  private void onClear() {
+  @Override
+  public void animationFinished() {
     trailDrawer.clear();
   }
 
   public void onQuillSelected() {
-    onClear();
+    trailDrawer.clear();
     trailDrawer.getTrailOptions().selectQuillPen();
   }
 
   public void onMarkerSelected() {
-    onClear();
+    trailDrawer.clear();
     trailDrawer.getTrailOptions().selectMarkerPen();
+  }
+
+  public void onClearSelected() {
+    trailDrawer.getAnimationParameters().setTimeProperties(0, 500);
+    trailDrawer.animateAlpha(TRAIL_COLOR);
   }
 }

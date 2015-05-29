@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DrawingTest</string>
+    <string name="clear">Effacer</string>
+    <string name="marker">Marqueur</string>
+    <string name="quill">Plume</string>
+</resources>

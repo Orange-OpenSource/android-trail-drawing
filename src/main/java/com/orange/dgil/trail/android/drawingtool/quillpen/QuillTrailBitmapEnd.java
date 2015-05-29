@@ -102,7 +102,7 @@ class QuillTrailBitmapEnd implements IDrawingTool {
   }
 
   @Override
-  public void forceRedrawForAnimation() {
+  public void forceRedrawForAnimation(boolean eraseBitmap) {
     // not used
   }
 }

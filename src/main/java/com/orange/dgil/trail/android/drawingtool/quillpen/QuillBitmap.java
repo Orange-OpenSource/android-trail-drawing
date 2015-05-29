@@ -48,14 +48,18 @@ class QuillBitmap {
   }
 
   void reset() {
-    if (isLoaded()) {
-      eraseBitmap();
-    }
+    resetAlpha();
+    eraseBitmap();
+  }
+
+  void resetAlpha() {
     paint.setAlpha(255);
   }
 
   private void eraseBitmap() {
-    bitmap.eraseColor(Color.TRANSPARENT);
+    if (isLoaded()) {
+      bitmap.eraseColor(Color.TRANSPARENT);
+    }
   }
 
   void setAlpha(int alpha) {

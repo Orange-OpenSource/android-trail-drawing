@@ -23,5 +23,5 @@ public interface IDrawingTool {
   void invalidateAreaOnMove();
   void invalidatePath();
 
-  void forceRedrawForAnimation();
+  void forceRedrawForAnimation(boolean eraseBitmap);
 }
