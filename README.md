@@ -10,8 +10,7 @@ A gesture trail drawing library for Android and Java applications
 It is a maven build, so basically <code>mvn install</code> should do the job. It will install the library in your local repository. You can also retrieve the jar file under the target directory (after the maven build).
 
 To use the library in a maven build:
-<pre><code>
-&lt;dependency&gt;
+<pre><code>&lt;dependency&gt;
   &lt;groupId&gt;ccom.orange.dgil.trail&lt;/groupId&gt;
   &lt;artifactId&gt;trail-core-lib&lt;/artifactId&gt;
   &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
@@ -20,8 +19,7 @@ To use the library in a maven build:
 </pre></code>
 
 In a gradle build:
-<pre><code>
-dependencies {
+<pre><code>dependencies {
   compile "com.orange.dgil.trail:trail-core-lib:1.0-SNAPSHOT"
 }
 </pre></code>
