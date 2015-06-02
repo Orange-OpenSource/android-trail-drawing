@@ -5,6 +5,11 @@
     <groupId>com.orange.dgil.trail</groupId>
     <artifactId>trail-core-lib</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Trail drawing library</name>
+    <description>Gesture trail drawing library for Android and Java</description>
+    <url>https://github.com/Orange-OpenSource/trail-drawing</url>
 
     <properties>
         <guava.version>17.0</guava.version>
@@ -86,5 +91,27 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <licenses>
+        <license>
+            <name>Mozilla Public License v2.0</name>
+            <url>https://www.mozilla.org/MPL/2.0</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Christophe Maldivi</name>
+            <email>christophe.maldivi@orange.com</email>
+            <organization>Orange</organization>
+            <organizationUrl>https://github.com/Orange-OpenSource</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:Orange-OpenSource/trail-drawing.git</connection>
+        <developerConnection>scm:git:git@github.com:Orange-OpenSource/trail-drawing.git</developerConnection>
+        <url>git@github.com:Orange-OpenSource/trail-drawing.git</url>
+    </scm>
 
 </project>
