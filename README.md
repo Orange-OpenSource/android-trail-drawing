@@ -5,7 +5,7 @@ Trail Drawing library
 
 A gesture trail drawing library for Android and Java applications.
 
-It allows to draw thick and thin strokes as if you were used a felt-tip marker. To achieve this, we first used a polygonal chain in order to approximate the hand-drawing trail and to select the most salient points. Next, we used a square Bezier curve approximation to model a smooth curve in place of the original path. This smooth path serves then to guide a virtual felt-tip modeled by a flattened ellipsoid which orientation remains constant during the entire drawing. The main difficulty of this treatment is to perform it online without perceived latency.
+It allows to draw thick and thin strokes as if you were used a felt-tip marker. To achieve this, we first used a polygonal chain in order to approximate the hand-drawing trail and to select the most salient points. Next, we used a quadratic Bezier curve approximation to model a smooth curve in place of the original path. This smooth path serves then to guide a virtual felt-tip modeled by a flattened ellipsoid which orientation remains constant during the entire drawing. The main difficulty of this treatment is to perform it online without perceived latency.
 
 
 # Build the library
