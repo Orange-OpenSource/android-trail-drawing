@@ -16,9 +16,10 @@ import android.graphics.Paint;
 import android.view.View;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor(suppressConstructorProperties = true)
 class QuillBitmap {
-
   private final View view;
   private final Paint paint = new Paint();
 
@@ -27,15 +28,21 @@ class QuillBitmap {
   @Getter
   private Canvas bitmapCanvas;
 
-
-  QuillBitmap(View view) {
-    this.view = view;
-  }
-
   void lazyLoading() {
-    if (bitmap == null) {
+    if (shouldAllocateNewBitmap()) {
+      releaseBitmap();
       bitmap = getNewBitmap();
       bitmapCanvas = new Canvas(bitmap);
+    }
+  }
+
+  private boolean shouldAllocateNewBitmap() {
+    return bitmap == null || bitmap.getWidth() != view.getWidth() || bitmap.getHeight() != view.getHeight();
+  }
+
+  private void releaseBitmap() {
+    if (bitmap != null) {
+      bitmap.recycle();
     }
   }
 
