@@ -16,18 +16,18 @@ To use the library in a maven build:
 <pre><code>&lt;dependency&gt;
   &lt;groupId&gt;ccom.orange.dgil.trail&lt;/groupId&gt;
   &lt;artifactId&gt;trail-core-lib&lt;/artifactId&gt;
-  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;version&gt;1.0.4&lt;/version&gt;
   &lt;scope&gt;compile&lt;/scope&gt;
 &lt;/dependency&gt;
 </pre></code>
 
 In a gradle build:
 <pre><code>dependencies {
-  compile "com.orange.dgil.trail:trail-core-lib:1.0-SNAPSHOT"
+  compile "com.orange.dgil.trail:trail-core-lib:1.0.4"
 }
 </pre></code>
 
-The library will soon be published on maven central to ease developers' life.
+The library is published on maven central to ease developers' life.
 
 # Demo applications
 Can be found in the "demo" directory: android and javafx apps. Basically the javafx application is used to test and debug algorithms.
