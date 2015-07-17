@@ -87,7 +87,6 @@ class QuadInterpolator {
   }
 
 
-
   @VisibleForTesting
   void interpolate() {
     updateInterpStartAndEndPoints();
@@ -99,7 +98,8 @@ class QuadInterpolator {
     updateInterpStartEndWithMiddles();
     if (quadDat.isCurveStart()) {
       quadDat.getInterpStartPoint().deepCopy(quadDat.getPoint0());
-    } else if (quadDat.isCurveEnd()) {
+    }
+    if (quadDat.isCurveEnd()) {
       quadDat.getInterpEndPoint().deepCopy(quadDat.getPoint2());
     }
   }
