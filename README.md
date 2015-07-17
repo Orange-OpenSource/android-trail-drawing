@@ -14,7 +14,7 @@ It is a maven build, so basically <code>mvn install</code> should do the job. It
 
 The library is published on maven central to ease developers' life. So to use the library in a maven build:
 <pre><code>&lt;dependency&gt;
-  &lt;groupId&gt;ccom.orange.dgil.trail&lt;/groupId&gt;
+  &lt;groupId&gt;com.orange.dgil.trail&lt;/groupId&gt;
   &lt;artifactId&gt;trail-core-lib&lt;/artifactId&gt;
   &lt;version&gt;1.1.1&lt;/version&gt;
   &lt;scope&gt;compile&lt;/scope&gt;
