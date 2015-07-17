@@ -12,7 +12,7 @@ It allows to draw thick and thin strokes as if you were used a felt-tip marker. 
 
 It is a maven build, so basically <code>mvn install</code> should do the job. It will install the library in your local repository. You can also retrieve the jar file under the target directory (after the maven build).
 
-To use the library in a maven build:
+The library is published on maven central to ease developers' life. So to use the library in a maven build:
 <pre><code>&lt;dependency&gt;
   &lt;groupId&gt;ccom.orange.dgil.trail&lt;/groupId&gt;
   &lt;artifactId&gt;trail-core-lib&lt;/artifactId&gt;
@@ -26,8 +26,6 @@ In a gradle build:
   compile "com.orange.dgil.trail:trail-core-lib:1.0.4"
 }
 </pre></code>
-
-The library is published on maven central to ease developers' life.
 
 # Demo applications
 Can be found in the "demo" directory: android and javafx apps. Basically the javafx application is used to test and debug algorithms.
