@@ -48,4 +48,9 @@ class BitmapDrawer {
     rectF.set(x - wRadius, y - hRadius, x + wRadius, y + hRadius);
     canvas.drawOval(rectF, paint);
   }
+
+  void drawCirclePoint(Canvas canvas, int x, int y) {
+    rectF.set(x - wRadius, y - wRadius, x + wRadius, y + wRadius);
+    canvas.drawOval(rectF, paint);
+  }
 }

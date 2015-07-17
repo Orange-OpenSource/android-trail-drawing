@@ -67,7 +67,7 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
     inGesture = true;
     trailEndEnabled = false;
     quadCurveArrayIsFull = false;
-
+    lastRawPoint.set(x, y);
     bitmapDrawer.updateDrawParameters();
 
     quadCurveTrail.touchDown(x, y);
@@ -105,21 +105,32 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
   public void touchUp() {
     inGesture = false;
     tryCurveTrailTouchUp();
-    quillTrailBitmap.touchUp();
-    addTouchUpToTrailEnd();
-    invalidatePath();
-  }
-
-  private void addTouchUpToTrailEnd() {
-    if (trailEndEnabled) {
-      quillTrailBitmapEnd.touchUp();
+    if (!quadCurveTrail.getQuadCurveArray().isNotEmpty()) {
+      drawSinglePointOnTouchUp();
     }
+    drawLastPointsOnTouchUp();
   }
 
   private void tryCurveTrailTouchUp() {
     try {
       quadCurveTrail.touchUp();
     } catch (QuadCurveArrayException e) {
+    }
+  }
+
+  private void drawLastPointsOnTouchUp() {
+    quillTrailBitmap.touchUp();
+    addTouchUpToTrailEnd();
+    invalidatePath();
+  }
+
+  private void drawSinglePointOnTouchUp() {
+    quillTrailBitmap.drawSinglePointAt(lastRawPoint);
+  }
+
+  private void addTouchUpToTrailEnd() {
+    if (trailEndEnabled) {
+      quillTrailBitmapEnd.touchUp();
     }
   }
 
