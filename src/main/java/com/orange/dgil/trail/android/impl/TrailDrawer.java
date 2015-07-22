@@ -55,6 +55,10 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /**
+   * Whether we allow to save several strokes or not.
+   * If not the trail is cleared at the {@link com.orange.dgil.trail.android.ITrailDrawer#touchDown touchDown} event
+   */
   public void setMultistrokeEnabled(boolean enable) {
     multistrokeEnabled = enable;
   }
@@ -113,6 +117,7 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /** hide the trail AND clear all points from the underlying buffer */
   public void clear() {
     if (visible) {
       hide();
@@ -125,18 +130,21 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /** hide the trail BUT keep all points in the underlying buffer for later use */
   public void hide() {
     visible = false;
     invalidatePath();
   }
 
   @Override
+  /** show the trail with all points contained in the underlying buffer */
   public void show() {
     animManager.reset();
     visible = true;
   }
 
   @Override
+  /** same as {@link com.orange.dgil.trail.android.ITrailDrawer#show show} , BUT for path redraw */
   public void showAndRedrawPath() {
     animManager.reset();
     invalidatePath();
@@ -144,6 +152,7 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /** vanish alpha animation */
   public void animate() {
     if (visible) {
       animManager.start();
@@ -151,6 +160,7 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /** vanish alpha animation BUT set the trail color before starting the animation */
   public void animateAlpha(int color) {
     if (visible) {
       getAnimationParameters().setColorForAlphaAnimation(color);
@@ -161,6 +171,7 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /** current trail color to provided color transformation animation */
   public void animateToColor(int color) {
     if (visible) {
       getAnimationParameters().setColorProperties(getTrailOptions().getColor(), color);
@@ -169,12 +180,14 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   @Override
+  /** same as {@link com.orange.dgil.trail.android.ITrailDrawer#show show} , BUT set color as well */
   public void show(int color) {
     getTrailOptions().setColor(color);
     show();
   }
 
   @Override
+  /** same as {@link com.orange.dgil.trail.android.ITrailDrawer#show show} , BUT set color as well AND force path redraw */
   public void showAndRedrawPath(int color) {
     getTrailOptions().setColor(color);
     showAndRedrawPath();

@@ -21,18 +21,30 @@ public interface ITrailDrawer {
   TrailOptions getTrailOptions();
   AnimParameters getAnimationParameters();
 
+  /** hide the trail AND clear all points from the underlying buffer */
   void clear();
+
+  /** hide the trail BUT keep all points in the underlying buffer for later use */
   void hide();
+
+  /** show the trail with all points contained in the underlying buffer */
   void show();
+  /** same as {@link com.orange.dgil.trail.android.ITrailDrawer#show show} , BUT force path redraw */
   void showAndRedrawPath();
 
+  /** same as {@link com.orange.dgil.trail.android.ITrailDrawer#show show} , BUT set color as well */
   void show(int color);
+  /** same as {@link com.orange.dgil.trail.android.ITrailDrawer#show show} , BUT set color as well AND force path redraw */
   void showAndRedrawPath(int color);
 
+  /** vanish alpha animation */
   void animate();
+  /** vanish alpha animation BUT set the trail color before starting the animation */
   void animateAlpha(int color);
+  /** current trail color to provided color transformation animation */
   void animateToColor(int color);
 
+  /** whether we allow to save several strokes or not. If not the trail is cleared at the {@link com.orange.dgil.trail.android.ITrailDrawer#touchDown touchDown} event */
   void setMultistrokeEnabled(boolean enable);
 
   void touchDown(int x, int y);
