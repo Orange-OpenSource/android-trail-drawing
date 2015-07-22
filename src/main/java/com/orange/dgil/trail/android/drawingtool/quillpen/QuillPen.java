@@ -54,6 +54,7 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
 
   @Override
   public void reset() {
+    quadCurveTrail.reset();
     quillTrailBitmap.reset();
   }
 

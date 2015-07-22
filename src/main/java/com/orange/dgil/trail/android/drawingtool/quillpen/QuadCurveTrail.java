@@ -46,6 +46,10 @@ class QuadCurveTrail {
     vectoSettings.setVectorsHeightThreshold(heightPx);
   }
 
+  void reset() {
+    quadCurve.reset();
+  }
+
   void touchDown(int x, int y) {
     quadCurve.reset();
     addPoint(x, y);
