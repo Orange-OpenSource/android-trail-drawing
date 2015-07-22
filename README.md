@@ -16,14 +16,14 @@ The library is published on maven central to ease developers' life. So to use th
 <pre><code>&lt;dependency&gt;
   &lt;groupId&gt;com.orange.dgil.trail&lt;/groupId&gt;
   &lt;artifactId&gt;trail-core-lib&lt;/artifactId&gt;
-  &lt;version&gt;1.1.1&lt;/version&gt;
+  &lt;version&gt;1.1.2&lt;/version&gt;
   &lt;scope&gt;compile&lt;/scope&gt;
 &lt;/dependency&gt;
 </pre></code>
 
 In a gradle build:
 <pre><code>dependencies {
-  compile "com.orange.dgil.trail:trail-core-lib:1.1.1"
+  compile "com.orange.dgil.trail:trail-core-lib:1.1.2"
 }
 </pre></code>
 
