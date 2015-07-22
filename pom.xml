@@ -4,7 +4,7 @@
 
     <groupId>com.orange.dgil.trail</groupId>
     <artifactId>trail-core-lib</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
     <packaging>jar</packaging>
 
     <name>Trail drawing library</name>
@@ -198,7 +198,7 @@
         <connection>scm:git:git@github.com:Orange-OpenSource/trail-drawing.git</connection>
         <developerConnection>scm:git:git@github.com:Orange-OpenSource/trail-drawing.git</developerConnection>
         <url>git@github.com:Orange-OpenSource/trail-drawing.git</url>
-      <tag>HEAD</tag>
+      <tag>trail-core-lib-1.1.2</tag>
   </scm>
 
 </project>
