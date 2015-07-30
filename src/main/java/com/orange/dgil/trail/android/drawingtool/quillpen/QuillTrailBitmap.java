@@ -155,6 +155,7 @@ class QuillTrailBitmap implements IDrawingTool {
   }
 
   void drawSinglePointAt(TrailPoint point) {
+    quillBitmap.lazyLoading();
     bitmapDrawer.drawCirclePoint(quillBitmap.getBitmapCanvas(), point.getX(), point.getY());
     trailBounds.updateTrailBounds(point.getX(), point.getY());
   }
