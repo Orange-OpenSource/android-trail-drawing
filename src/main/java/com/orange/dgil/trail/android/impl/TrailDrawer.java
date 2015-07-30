@@ -31,9 +31,13 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   private IAnimListener animationListener;
 
   private boolean visible = true;
-  private boolean inGesture;
   private boolean multistrokeEnabled = true;
 
+  /**
+   * useful to ensure the touch down -> move -> up regular sequence, which could
+   * be broken by multitouch gestures or weird apps
+   */
+  private boolean inGesture;
 
   public TrailDrawer(View view) {
     init(view);
@@ -92,8 +96,10 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
 
   @Override
   public void touchUp() {
-    inGesture = false;
-    drawingTool.touchUp();
+    if (inGesture) {
+      inGesture = false;
+      drawingTool.touchUp();
+    }
   }
 
   @Override
