@@ -18,6 +18,7 @@ import com.orange.dgil.trail.android.drawingtool.IDrawingTool;
 import com.orange.dgil.trail.android.drawingtool.TrailOptions;
 import com.orange.dgil.trail.core.common.TrailPoint;
 import com.orange.dgil.trail.core.quad.QuadCurveArrayException;
+import com.orange.dgil.trail.core.vecto.SlidingWindowIndexException;
 
 public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
 
@@ -115,7 +116,10 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
   private void tryCurveTrailTouchUp() {
     try {
       quadCurveTrail.touchUp();
-    } catch (QuadCurveArrayException e) {
+    } catch (QuadCurveArrayException e1) {
+      // ignore as we want to skip points when buffer is full
+    } catch (SlidingWindowIndexException e2) {
+      // ignore since it can happen if we receive a "reset/clear" command during a gesture
     }
   }
 
