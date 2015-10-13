@@ -39,8 +39,11 @@ For "JavaFxTest", <code>./gradlew run</code> will build and launch the applicati
 
 Happy testing!
 
-# Authors
-The library is born in 2014 at the Orange Labs in Meylan (french Alps). If Christophe Maldivi and Eric Petit practice cliff climbing together, they also sometimes write software together :)
+# Travis build
+See [job](https://travis-ci.org/Orange-OpenSource/trail-drawing)
 
 # License
 The trail drawing library is distributed under the terms and conditions of the Mozilla Public License v2.0, https://www.mozilla.org/MPL/2.0
+
+# Authors
+The library is born in 2014 at the Orange Labs in Meylan (french Alps). If Christophe Maldivi and Eric Petit practice cliff climbing together, they also sometimes write software together :)
