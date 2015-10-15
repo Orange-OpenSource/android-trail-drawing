@@ -43,6 +43,7 @@ Happy testing!
 See [job](https://travis-ci.org/Orange-OpenSource/trail-drawing)
 
 # License
+Copyright (C) 2014 Orange
 The trail drawing library is distributed under the terms and conditions of the Mozilla Public License v2.0, https://www.mozilla.org/MPL/2.0
 
 # Authors
