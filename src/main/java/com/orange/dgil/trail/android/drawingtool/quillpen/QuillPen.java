@@ -60,6 +60,12 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
   }
 
   @Override
+  public void trimMemory() {
+    quillTrailBitmap.trimMemory();
+    quillTrailBitmapEnd.trimMemory();
+  }
+
+  @Override
   public void forceRedrawForAnimation(boolean eraseBitmap) {
     quillTrailBitmap.forceRedrawForAnimation(eraseBitmap);
   }

@@ -45,6 +45,11 @@ class QuillTrailBitmapEnd implements IDrawingTool {
   }
 
   @Override
+  public void trimMemory() {
+    quillBitmap.releaseBitmap();
+  }
+
+  @Override
   public void touchDown(int x, int y) {
     inGesture = true;
     readIndex = 0;
@@ -72,15 +77,15 @@ class QuillTrailBitmapEnd implements IDrawingTool {
 
   @Override
   public void draw(Canvas canvas) {
-    quillBitmap.lazyLoading();
-    handleBitmapDrawing();
-    quillBitmap.drawBitmap(canvas);
+    if (inGesture) {
+      handleBitmapDrawing(canvas);
+    }
   }
 
-  private void handleBitmapDrawing() {
-    if (inGesture) {
+  private void handleBitmapDrawing(Canvas canvas) {
+      quillBitmap.lazyLoading();
       drawTrail(quillBitmap.getBitmapCanvas());
-    }
+      quillBitmap.drawBitmap(canvas);
   }
 
   private void drawTrail(Canvas canvas) {

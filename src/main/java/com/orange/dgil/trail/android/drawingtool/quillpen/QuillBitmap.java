@@ -40,9 +40,10 @@ class QuillBitmap {
     return bitmap == null || bitmap.getWidth() != view.getWidth() || bitmap.getHeight() != view.getHeight();
   }
 
-  private void releaseBitmap() {
+  void releaseBitmap() {
     if (bitmap != null) {
       bitmap.recycle();
+      bitmap = null;
     }
   }
 
