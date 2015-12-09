@@ -17,7 +17,7 @@ import com.orange.dgil.trail.android.animation.AnimManager;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 @Getter
 public class DrawingToolsContext {
   private final View view;

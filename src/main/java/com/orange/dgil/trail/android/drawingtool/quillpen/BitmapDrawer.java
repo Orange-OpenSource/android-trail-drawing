@@ -18,7 +18,7 @@ import com.orange.dgil.trail.android.drawingtool.TrailOptions;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 class BitmapDrawer {
 
   private final Paint paint = new Paint();

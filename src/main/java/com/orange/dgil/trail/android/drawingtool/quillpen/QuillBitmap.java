@@ -18,7 +18,7 @@ import android.view.View;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 class QuillBitmap {
   private final View view;
   private final Paint paint = new Paint();

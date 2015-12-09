@@ -17,7 +17,7 @@ import com.orange.dgil.trail.core.common.TrailRect;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 class TrailBounds {
 
   private final QuillParameters quillParameters;
