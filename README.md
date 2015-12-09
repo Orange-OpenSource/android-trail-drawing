@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Orange-OpenSource/trail-drawing)](https://travis-ci.org/Orange-OpenSource/trail-drawing) 
+
 Trail Drawing library
 =====================
 
@@ -38,9 +40,6 @@ For "DroidTest", <code>./gradlew assembleDebug</code> will build the apk.
 For "JavaFxTest", <code>./gradlew run</code> will build and launch the application. Be sure to use oracle java 8 jvm here.
 
 Happy testing!
-
-# Travis build
-See [job](https://travis-ci.org/Orange-OpenSource/trail-drawing)
 
 # License
 Copyright (C) 2014 Orange
