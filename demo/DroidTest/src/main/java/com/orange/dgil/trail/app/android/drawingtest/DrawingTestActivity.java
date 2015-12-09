@@ -27,6 +27,12 @@ public class DrawingTestActivity extends Activity {
   }
 
   @Override
+  public void onPause() {
+    super.onPause();
+    drawingArea.trimMemory();
+  }
+
+  @Override
   public void onResume() {
     super.onResume();
     initDrawingArea();
