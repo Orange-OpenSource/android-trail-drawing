@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Orange-OpenSource/trail-drawing)](https://travis-ci.org/Orange-OpenSource/trail-drawing) 
+[![Build Status](https://travis-ci.org/Orange-OpenSource/android-trail-drawing.svg?branch=master)](https://travis-ci.org/Orange-OpenSource/trail-drawing) 
 
 Trail Drawing library
 =====================
