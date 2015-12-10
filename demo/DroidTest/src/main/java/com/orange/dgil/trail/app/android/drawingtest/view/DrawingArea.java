@@ -37,6 +37,11 @@ public class DrawingArea extends RelativeLayout implements IAnimListener {
     trailDrawer.setAnimationListener(this);
   }
 
+  public void trimMemory() {
+    trailDrawer.clear();
+    trailDrawer.trimMemory();
+  }
+
   @Override
   public void draw(Canvas canvas) {
     super.draw(canvas);

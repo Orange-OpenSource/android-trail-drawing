@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 import java.lang.reflect.InvocationTargetException;
 
 @Getter
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 public class AndroidMetrics {
   private static final int MICROMETERS_PER_INCH = 25400;
 

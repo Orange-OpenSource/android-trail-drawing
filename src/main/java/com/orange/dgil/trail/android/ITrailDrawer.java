@@ -53,4 +53,7 @@ public interface ITrailDrawer {
   void touchCancel();
 
   void draw(Canvas c);
+
+  /** will release bitmaps memory if posssible; it is fair to call it when receiving the onPause activity event */
+  void trimMemory();
 }

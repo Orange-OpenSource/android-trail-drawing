@@ -15,7 +15,7 @@ import com.orange.dgil.trail.core.vecto.linearwindowfilter.LinearWindowFilterLis
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 public class VectoFilter implements LinearWindowFilterListener, VectoFilterListener {
 
   private final LinearWindowFilter linearWindowFilter = new LinearWindowFilter(this);

@@ -55,6 +55,11 @@ class QuillTrailBitmap implements IDrawingTool {
   }
 
   @Override
+  public void trimMemory() {
+    quillBitmap.releaseBitmap();
+  }
+
+  @Override
   public void forceRedrawForAnimation(boolean eraseBitmap) {
     bitmapDrawer.forceColor(animManager.getAnimColor());
     if (eraseBitmap) {
@@ -96,9 +101,10 @@ class QuillTrailBitmap implements IDrawingTool {
 
   @Override
   public void draw(Canvas canvas) {
-    quillBitmap.lazyLoading();
     handleBitmapDrawing();
-    quillBitmap.drawBitmap(canvas);
+    if (quillBitmap.isLoaded()) {
+      quillBitmap.drawBitmap(canvas);
+    }
   }
 
   private void handleBitmapDrawing() {
@@ -114,6 +120,7 @@ class QuillTrailBitmap implements IDrawingTool {
   }
 
   private void drawTrailInBitmap() {
+    quillBitmap.lazyLoading();
     shouldDrawTrailEnd = false;
     drawTrail(quillBitmap.getBitmapCanvas());
     checkDrawChange();

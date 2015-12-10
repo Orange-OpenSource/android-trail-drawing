@@ -108,4 +108,9 @@ public class MarkerPaths implements IDrawingTool {
   public void forceRedrawForAnimation(boolean eraseBitmap) {
     // not useful
   }
+
+  @Override
+  public void trimMemory() {
+    // nothing to release :)
+  }
 }

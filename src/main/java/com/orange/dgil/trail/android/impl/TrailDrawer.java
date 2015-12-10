@@ -50,7 +50,15 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   private void updateDrawingTool() {
+    trimMemory();
     drawingTool = drawingTools.getDrawingTool();
+  }
+
+  @Override
+  public void trimMemory() {
+    if (drawingTool != null) {
+      drawingTool.trimMemory();
+    }
   }
 
   void setView(View view) {

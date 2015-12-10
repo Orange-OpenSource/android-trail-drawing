@@ -16,7 +16,7 @@ import com.orange.dgil.trail.core.vecto.SlidingWindow;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 public class WindowAnalysis {
 
   private static final int DEFAULT_WINDOW_SIZE = 8;

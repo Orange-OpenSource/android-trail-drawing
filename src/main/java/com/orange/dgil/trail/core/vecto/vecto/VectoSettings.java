@@ -13,7 +13,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@RequiredArgsConstructor(suppressConstructorProperties = true)
+@RequiredArgsConstructor
 public class VectoSettings {
   private static final int DEFAULT_VECTO_ERROR_HEIGHT_PIXELS = 1;
 
