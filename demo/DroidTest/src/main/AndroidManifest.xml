@@ -10,7 +10,7 @@
         <activity
             android:name="com.orange.dgil.trail.app.android.drawingtest.DrawingTestActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="sensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
