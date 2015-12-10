@@ -31,7 +31,7 @@ In a gradle build:
 
 # Demo applications
 Can be found in the "demo" directory: android and javafx apps. Basically the javafx application is used to test and debug algorithms.
-Above gestures where produced with the android "DroidTest" demo, whose prebuilt apk is here (click on "Raw" to save file): https://github.com/Orange-OpenSource/trail-drawing/blob/master/demo/DroidDrawingTest.apk
+Above gestures where produced with the android "DroidTest" demo, whose prebuilt apk is here (click on "Raw" to save file): [Demo apk](https://github.com/Orange-OpenSource/trail-drawing/blob/master/demo/DroidDrawingTest.apk)
 
 Both demo apps use gradle for the build.
 
