@@ -40,8 +40,17 @@ class QuillBitmap {
     return bitmap == null || bitmap.getWidth() != view.getWidth() || bitmap.getHeight() != view.getHeight();
   }
 
+  /**
+   * Release bitmap memory allocation; we are quite paranoiac here but it is worthy:
+   *  - make sure the bitmap ref is not kept by the canvas (java/native objects)
+   *  - indicates that the bitmap can be recycled rapidly (call to recycle())
+   * So we release memory, but also try to let the system understand that it can freed it at once.
+   * We are fair with other apps, but it is also a way to keep our app in the background alive.
+   */
   void releaseBitmap() {
     if (bitmap != null) {
+      bitmapCanvas.setBitmap(null);
+      bitmapCanvas = null;
       bitmap.recycle();
       bitmap = null;
     }
