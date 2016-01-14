@@ -61,6 +61,7 @@ class QuillTrailBitmap implements IDrawingTool {
 
   @Override
   public void forceRedrawForAnimation(boolean eraseBitmap) {
+    quillBitmap.lazyLoading();
     bitmapDrawer.forceColor(animManager.getAnimColor());
     if (eraseBitmap) {
       quillBitmap.reset();
