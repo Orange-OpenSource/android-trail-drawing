@@ -11,6 +11,7 @@ package com.orange.dgil.trail.android.drawingtool.quillpen;
 
 import android.graphics.Canvas;
 
+import android.util.Log;
 import com.orange.dgil.trail.android.animation.AnimManager;
 import com.orange.dgil.trail.android.animation.AnimParameters;
 import com.orange.dgil.trail.android.drawingtool.DrawingToolsContext;
@@ -61,6 +62,7 @@ public class QuillPen implements IDrawingTool, QuillTrailBitmapListener {
 
   @Override
   public void trimMemory() {
+    Log.i(QuillPen.class.getSimpleName(), "trimMemory, release quill bitmaps");
     quillTrailBitmap.trimMemory();
     quillTrailBitmapEnd.trimMemory();
   }

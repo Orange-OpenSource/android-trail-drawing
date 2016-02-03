@@ -1,6 +1,6 @@
 /**
  * Trail drawing library
- * Copyright (C) 2014 Orange
+ * Copyright (C) 2016 Orange
  * Authors: christophe.maldivi@orange.com, eric.petit@orange.com
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -50,8 +50,11 @@ public class TrailDrawer implements ITrailDrawer, IAnimDrawer {
   }
 
   private void updateDrawingTool() {
-    trimMemory();
-    drawingTool = drawingTools.getDrawingTool();
+    IDrawingTool selectedTool = drawingTools.getDrawingTool();
+    if (drawingTool != selectedTool) {
+      trimMemory();
+      drawingTool = selectedTool;
+    }
   }
 
   @Override

@@ -102,4 +102,9 @@ public class DrawingArea extends RelativeLayout implements IAnimListener {
     trailDrawer.getAnimationParameters().setTimeProperties(0, 500);
     trailDrawer.animateAlpha(TRAIL_COLOR);
   }
+
+  public void onMultistrokeSwitchToggled(boolean checked) {
+    trailDrawer.clear();
+    trailDrawer.setMultistrokeEnabled(checked);
+  }
 }

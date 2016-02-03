@@ -12,6 +12,7 @@ package com.orange.dgil.trail.app.android.drawingtest;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 
 import com.orange.dgil.trail.app.android.drawing.R;
 import com.orange.dgil.trail.app.android.drawingtest.view.DrawingArea;
@@ -58,5 +59,11 @@ public class DrawingTestActivity extends Activity {
   /** on click, see layout.xml */
   public void onClearSelected(View view) {
     drawingArea.onClearSelected();
+  }
+
+  /** on click, see layout.xml */
+  public void onMultistrokeSwitchToggled(View view) {
+    Switch toggle = (Switch) view;
+    drawingArea.onMultistrokeSwitchToggled(toggle.isChecked());
   }
 }

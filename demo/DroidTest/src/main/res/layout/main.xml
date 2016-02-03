@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".DrawingTestActivity" >
 
+    <Button
+        android:id="@+id/clear_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/clear"
+        android:onClick="onClearSelected" />
+
     <LinearLayout
         android:id="@+id/toolbar"
         android:layout_alignParentTop="true"
@@ -22,16 +30,24 @@
             android:layout_height="wrap_content"
             android:text="@string/marker"
             android:onClick="onMarkerSelected" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear"
-            android:onClick="onClearSelected" />
+
     </LinearLayout>
+
+    <Switch
+        android:id="@+id/multistroke_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:text="@string/multistroke"
+        android:textOn="ON"
+        android:textOff="OFF"
+        android:checked="true"
+        android:onClick="onMultistrokeSwitchToggled" />
 
     <com.orange.dgil.trail.app.android.drawingtest.view.DrawingArea
         android:id="@+id/drawing_area"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@+id/multistroke_btn"
+        android:layout_above="@id/clear_btn"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@android:color/white" />
