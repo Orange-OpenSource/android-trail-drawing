@@ -12,7 +12,6 @@
     <url>https://github.com/Orange-OpenSource/trail-drawing</url>
 
     <properties>
-        <guava.version>17.0</guava.version>
         <junit.version>4.12</junit.version>
         <mockito.version>1.9.5</mockito.version>
         <powerMockito.version>1.5.4</powerMockito.version>
@@ -39,12 +38,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

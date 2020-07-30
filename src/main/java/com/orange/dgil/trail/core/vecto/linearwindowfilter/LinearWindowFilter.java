@@ -9,7 +9,6 @@
  */
 package com.orange.dgil.trail.core.vecto.linearwindowfilter;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.orange.dgil.trail.core.common.TrailPoint;
 import com.orange.dgil.trail.core.vecto.SlidingWindow;
 
@@ -31,12 +30,10 @@ public class LinearWindowFilter {
     initProperties();
   }
 
-  @VisibleForTesting
   void initProperties() {
     weightsSum = getWeightsSum();
   }
 
-  @VisibleForTesting
   int getWeightsSum() {
     int sum = 0;
     for (int weight : windowWeights) {
@@ -60,7 +57,6 @@ public class LinearWindowFilter {
     }
   }
 
-  @VisibleForTesting
   void doAddPoint(TrailPoint point) {
     slidingWindow.add(point);
     if (isNewPointAvailable()) {
@@ -68,12 +64,10 @@ public class LinearWindowFilter {
     }
   }
 
-  @VisibleForTesting
   boolean isNewPointAvailable() {
     return slidingWindow.getAddedElementsNumber() == 1 || slidingWindow.isFull();
   }
 
-  @VisibleForTesting
   void computeNewPointAndNotifyListener() {
     int x;
     int y;
@@ -87,7 +81,6 @@ public class LinearWindowFilter {
     linearWindowFilterListener.onNewFilteredPointAvailable(x, y);
   }
 
-  @VisibleForTesting
   int getMeanX() {
     int sumX = 0;
     for (int i = 0; i < windowWeights.length; i++) {
@@ -95,7 +88,6 @@ public class LinearWindowFilter {
     }
     return (sumX + weightsSum/2) / weightsSum;
   }
-  @VisibleForTesting
   int getMeanY() {
     int sumY = 0;
     for (int i = 0; i < windowWeights.length; i++) {

@@ -12,8 +12,6 @@ package com.orange.dgil.trail.android.animation;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
-import com.google.common.annotations.VisibleForTesting;
-
 import lombok.Getter;
 
 class AnimRunnable implements Runnable {
@@ -34,7 +32,6 @@ class AnimRunnable implements Runnable {
     this.animParameters = animParameters;
   }
 
-  @VisibleForTesting
   void start() {
     reset();
     setStartTime(animParameters.getPreAnimDelay());
@@ -43,7 +40,6 @@ class AnimRunnable implements Runnable {
     updateAfter(animParameters.getPreAnimDelay());
   }
 
-  @VisibleForTesting
   void updateAfter(int delayMillis) {
     View v = drawer.getView();
     if (delayMillis == 0) {
@@ -59,12 +55,10 @@ class AnimRunnable implements Runnable {
     drawer.getView().removeCallbacks(this);
   }
 
-  @VisibleForTesting
   void setStartTime(int preAnimDelay) {
     startTime = getCurrentTime() + preAnimDelay;
   }
 
-  @VisibleForTesting
   long getRemainingDuration() {
     long remainingDuration = startTime + animParameters.getAnimDuration() - getCurrentTime();
     return Math.max(remainingDuration, 0);
@@ -84,7 +78,6 @@ class AnimRunnable implements Runnable {
     drawer.invalidatePath();
   }
 
-  @VisibleForTesting
   void doRun() {
     long remainingDuration = getRemainingDuration();
     if (remainingDuration > 0) {
@@ -94,19 +87,16 @@ class AnimRunnable implements Runnable {
     }
   }
 
-  @VisibleForTesting
   void end() {
     reset();
     drawer.animationFinished();
   }
 
-  @VisibleForTesting
   void update(long remainingDuration) {
     factor = getTimeFactor(remainingDuration);
     updateAfter(0);
   }
 
-  @VisibleForTesting
   float getTimeFactor(long remainingDuration) {
     return remainingDuration / (float) animParameters.getAnimDuration();
   }

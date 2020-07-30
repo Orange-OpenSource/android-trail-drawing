@@ -2,20 +2,17 @@
  * Trail drawing library
  * Copyright (C) 2014 Orange
  * Authors: christophe.maldivi@orange.com, eric.petit@orange.com
- *
+ * <p>
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 package com.orange.dgil.trail.core.quad;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.orange.dgil.trail.core.common.TrailPoint;
 import com.orange.dgil.trail.core.vecto.SlidingWindow;
-
 import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -87,7 +84,6 @@ class QuadInterpolator {
   }
 
 
-  @VisibleForTesting
   void interpolate() {
     updateInterpStartAndEndPoints();
     rawInterpolate();
@@ -110,7 +106,7 @@ class QuadInterpolator {
   }
 
   private void updateWithMiddle(TrailPoint destPoint, TrailPoint point0, TrailPoint point1) {
-    destPoint.set((point0.getX() + point1.getX() + 1)/2, (point0.getY() + point1.getY() + 1)/2);
+    destPoint.set((point0.getX() + point1.getX() + 1) / 2, (point0.getY() + point1.getY() + 1) / 2);
   }
 
   private void handleCurveEnd() {
@@ -121,7 +117,6 @@ class QuadInterpolator {
   }
 
 
-  @VisibleForTesting
   void rawInterpolate() {
     initInterpolation();
     doInterpolate();
@@ -136,7 +131,7 @@ class QuadInterpolator {
   private void doInterpolateAtT(int t) {
     int x = getInterp(t, quadDat.getCoefA(), quadDat.getCoefB(), quadDat.getCoefC(), quadDat.getInterpNbPoints());
     int y = getInterp(t, quadDat.getCoefD(), quadDat.getCoefE(), quadDat.getCoefF(), quadDat.getInterpNbPoints());
-   quadCurveArray.add(x, y);
+    quadCurveArray.add(x, y);
   }
 
   private int getInterp(int t, long coef1, long coef2, long coef3, int nbPoints) {
@@ -178,7 +173,7 @@ class QuadInterpolator {
   }
 
   private int getMiddleApproximation(int coord0, int coord1, int coord2) {
-    return ( ((coord0 + coord1 + 1) >> 1) + ((coord1 + coord2 + 1) >> 1) + 1) >> 1;
+    return (((coord0 + coord1 + 1) >> 1) + ((coord1 + coord2 + 1) >> 1) + 1) >> 1;
   }
 
 

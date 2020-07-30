@@ -9,7 +9,6 @@
  */
 package com.orange.dgil.trail.core.vecto;
 
-import com.google.common.annotations.VisibleForTesting;
 import com.orange.dgil.trail.core.common.TrailPoint;
 
 import lombok.Getter;
@@ -71,17 +70,14 @@ public class SlidingWindow {
     }
   }
 
-  @VisibleForTesting
   boolean isIndexValid(int index) {
     return index >= 0 && index <= getMaxIndex();
   }
 
-  @VisibleForTesting
   int getMaxIndex() {
     return Math.min(addedElementsNumber, points.length) - 1;
   }
 
-  @VisibleForTesting
   void slidePointsToTheLeft() {
     TrailPoint p0 = points[0];
     for (int i = 0; i < points.length-1; i++) {
@@ -90,7 +86,6 @@ public class SlidingWindow {
     points[points.length-1] = p0;
   }
 
-  @VisibleForTesting
   void doAdd(int x, int y) {
     points[getInsertIndex()].set(x, y);
     addedElementsNumber++;
@@ -116,7 +111,6 @@ public class SlidingWindow {
     }
   }
 
-  @VisibleForTesting
   int getInsertIndex() {
     return Math.min(addedElementsNumber, points.length - 1);
   }
